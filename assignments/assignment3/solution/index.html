@@ -25,8 +25,9 @@
         <items-loader-indicator></items-loader-indicator>
 
         <!-- found-items should be implemented as a component -->
-        <found-items found-items="ctrl.found" on-remove="ctrl.removeItem(index)"></found-items>
+        <found-items items="ctrl.found" on-remove="ctrl.removeItem(index)"></found-items>
 
+        <!--
         <div class="container">
             <table ng-if="ctrl.found.length > 0">
                 <caption>{{ctrl.found.length}} Menu items</caption>
@@ -42,6 +43,7 @@
                 </tr>
             </table>
         </div>
+        -->
     </div>
 
 </body>
