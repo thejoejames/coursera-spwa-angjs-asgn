@@ -39,7 +39,7 @@
 
         menu.logMenuItems = function (searchTerm) {
             console.log('Search term was [' + searchTerm + "]");
-            menu.found = '';
+            menu.found = [];
 
             if (searchTerm != undefined && searchTerm.trim().length > 0) {
                 console.log('About to search menu items...');

@@ -1,4 +1,5 @@
 <div style="clear:both;">
+    <p class="error" ng-if="list.items.length === 0">Nothing Found</p>
     <table ng-if="list.items.length > 0">
         <caption>{{list.items.length}} Menu items</caption>
         <tr>
