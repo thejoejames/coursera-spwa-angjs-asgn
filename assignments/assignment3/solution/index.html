@@ -25,25 +25,9 @@
         <items-loader-indicator></items-loader-indicator>
 
         <!-- found-items should be implemented as a component -->
-        <found-items items="ctrl.found" on-remove="ctrl.removeItem(index)"></found-items>
-
-        <!--
-        <div class="container">
-            <table ng-if="ctrl.found.length > 0">
-                <caption>{{ctrl.found.length}} Menu items</caption>
-                <tr>
-                    <th>name</th>
-                    <th>short</th>
-                    <th>description</th>
-                </tr>
-                <tr ng-repeat="item in ctrl.found">
-                    <td>{{item.name}}</td>
-                    <td>{{item.short_name}}</td>
-                    <td>{{item.description}}</td>
-                </tr>
-            </table>
-        </div>
-        -->
+        <p>
+            <found-items items="ctrl.found" on-remove="ctrl.removeItem(index)"></found-items>
+        </p>
     </div>
 
 </body>
