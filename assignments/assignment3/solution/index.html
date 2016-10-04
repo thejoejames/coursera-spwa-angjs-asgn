@@ -21,13 +21,14 @@
             <button class="btn btn-primary" ng-click="ctrl.logMenuItems(searchTerm)">Narrow It Down For Me!</button>
         </div>
 
-        <!-- Bonus loader (see Bonus section of the assignment) -->
+        <!-- Bonus loader (see Bonus section of the assignment) 
         <items-loader-indicator></items-loader-indicator>
+        -->
 
         <!-- found-items should be implemented as a component -->
-        <p>
+        <div style="clear:both;">
             <found-items items="ctrl.found" on-remove="ctrl.removeItem(index)"></found-items>
-        </p>
+        </div>
     </div>
 
 </body>
