@@ -9,7 +9,7 @@
 
     function MenuListDirective() {
         var ddo = {
-            templateUrl: 'itemsloaderindicator.template.html',
+            templateUrl: 'loader/itemsloaderindicator.template.html',
             scope: {
                 foundItems: '<',
                 onRemove: '&'
