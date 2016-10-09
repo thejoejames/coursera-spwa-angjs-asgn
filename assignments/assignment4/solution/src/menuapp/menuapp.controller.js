@@ -1,30 +1,14 @@
 (function () {
     'use strict';
     angular.module('MenuApp')
-        .controller('MenuAppController', MenuAppController)
+        .controller('MenuAppCatController', MenuAppCatController)
         .controller('MenuAppItemController', MenuAppItemController);
 
-    MenuAppController.$inject = ['MenuDataService'];
-    function MenuAppController(MenuDataService) {
+    MenuAppCatController.$inject = ['catList'];
+    function MenuAppCatController(catList) {
         var ctrl = this;
-        ctrl.catList = [];
-        ctrl.itemList = [];
-
-        
-
-        if (ctrl.catList.length === 0) {
-            var promise = MenuDataService.getAllCategories();
-
-            promise.then(function (response) {
-                ctrl.catList = response;
-                console.log('******** GOT CATEGORY DATA *********');
-                console.log(ctrl.catList);
-            })
-            .catch(function (error) {
-                console.log('******** ERROR ERROR ERROR!! ********');
-                console.log(error);
-            });
-        }
+        ctrl.catList = catList;
+        console.log('******** SET CATEGORY DATA *********', ctrl.catList);        
     }
 
     MenuAppItemController.$inject = ['itemList'];

@@ -16,14 +16,25 @@
             // Home page
             .state('home', {
                 url: '/',
-                template: '<a ui-sref="catList">See Categories</a>'
+                template: '<a ui-sref="categoryList">See Categories</a>'
             })
 
             // category list page
-            .state('catList', {
+            .state('categoryList', {
                 url: '/category-list',
                 templateUrl: 'src/menuapp/routeTemplates/category-list.template.html',
-                controller: 'MenuAppController as menuCtrl'
+                controller: 'MenuAppCatController as menuCtrl',
+                resolve: {
+                    catList: ['MenuDataService', 
+                        function(MenuDataService){
+                            return MenuDataService.getAllCategories()
+                                .then(function (cats) {
+                                    console.info('**** Categories found', cats);
+                                    return cats;
+                                });
+                        }
+                    ]
+                }
             })
 
             .state('menuDetail', {
@@ -38,7 +49,8 @@
                                     console.info('**** Items found', items);
                                     return items;
                                 });
-                        }]
+                        }
+                    ]
                 }
             });
     }
