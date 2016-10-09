@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app='MenuApp'>
+
+<head>
+  <title>Assignment 4: Menu Categories and Details</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Libraries -->
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/angular-ui-router.min.js"></script>
+  <script src="lib/jquery-3.1.0.min.js"></script>
+
+  <!-- Modules -->
+  <script src="src/menuapp/menuapp.module.js"></script>
+  <script src="src/data/data.module.js"></script>
+
+  <!-- Routes -->
+  <script src="src/menuapp/routes.js"></script>
+
+  <!-- 'MenuApp' module artifacts -->
+  <script src="src/categories/categories.component.js"></script>
+  <script src="src/items/items.component.js"></script>
+  <script src="src/menuapp/menuapp.controller.js"></script>
+  <!--
+    <script src="src/shoppinglist/shoppinglist.controller.js"></script>
+    <script src="src/shoppinglist/shoppinglist.factory.js"></script>
+    <script src="src/shoppinglist/weightlossfilter.service.js"></script>
+    -->
+
+  <!-- 'Data' module artifacts -->
+  <script src="src/data/menudata.service.js"></script>  
+</head>
+
+<body>
+  <h1>Welcome to Our Restaurant:</h1>
+
+  <div class="container" ng-controller='MenuAppController as ctrl'>
+    <ui-view></ui-view>
+  </div>  
+
+</body>
+
+</html>

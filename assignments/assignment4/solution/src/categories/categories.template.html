@@ -1,0 +1,11 @@
+<div>
+    <table ng-if="ctrl.categorylist.length > 0">
+        <caption>Categories</caption>
+        <tr>
+            <th>name</th>
+        </tr>
+        <tr ng-repeat="cat in ctrl.categorylist">
+            <td><a ui-sref="menuDetail({catId: cat.short_name})" ui-sref-active="activeCat">{{cat.name}}</a></td>            
+        </tr>
+    </table>
+</div>

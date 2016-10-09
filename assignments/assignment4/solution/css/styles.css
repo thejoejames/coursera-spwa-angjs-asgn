@@ -1,0 +1,21 @@
+body {
+  font-size: 1.2em;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid darkblue;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  display: none;
+}
+
+.activeCat {
+  font-weight: bold;
+}
