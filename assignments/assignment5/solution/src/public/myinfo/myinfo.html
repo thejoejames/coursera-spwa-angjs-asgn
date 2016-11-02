@@ -1,0 +1,56 @@
+<div class="container">
+    <fieldset>
+        <legend style="color: white;">Registered Info</legend>
+
+        <div ng-if="myinfoCtrl.user == undefined">
+            Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now</a>!
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3" ng-if="myinfoCtrl.user">
+                NAME
+            </div>
+            <div class="col-md-6" ng-if="myinfoCtrl.user">
+                <span>{{myinfoCtrl.user.firstname}}</span>
+                <span>{{myinfoCtrl.user.lastname}}</span>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-sm-3" ng-if="myinfoCtrl.user">
+                EMAIL
+            </div>
+            <div class="col-md-3" ng-if="myinfoCtrl.user">
+                {{myinfoCtrl.user.email}}
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-sm-3" ng-if="myinfoCtrl.user">
+                PHONE
+            </div>
+            <div class="col-md-3" ng-if="myinfoCtrl.user">
+                {{myinfoCtrl.user.phone}}
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-sm-3" ng-if="myinfoCtrl.user">
+                FAVORITE DISH
+            </div>
+            <div class="col-md-3" ng-if="myinfoCtrl.user">
+                <img class="image-responsive" ng-src="{{myinfoCtrl.user.img}}"> {{myinfoCtrl.user.data.name}}
+            </div>
+            <div class="col-md-4" ng-if="myinfoCtrl.user">
+                {{myinfoCtrl.user.data.description}}
+            </div>
+        </div>
+
+
+
+
+    </fieldset>
+</div>

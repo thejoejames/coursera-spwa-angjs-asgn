@@ -1,0 +1,55 @@
+<div class="container">
+    <fieldset>
+        <legend style="color: white;">Sign Up With Favorite Dish</legend>
+        <form name='signupForm' novalidate>
+
+            <div class="row">
+                <input type="text" name="firstname" placeholder="First Name" class="form-control col-lg-6" ng-model="signupCtrl.user.firstname" required minlength="2">
+                <span ng-if="(signupForm.firstname.$error.minlength || signupForm.firstname.$error.required) && signupForm.firstname.$touched">
+                    First Name must be at least 2 characters long
+                </span>
+            </div>
+            <br>
+
+            <div class="row">
+                <input type="text" name="lastname" placeholder="Last Name" class="form-control col-lg-6" ng-model="signupCtrl.user.lastname" required minlength="2">
+                <span ng-if="(signupForm.lastname.$error.minlength || signupForm.lastname.$error.required) && signupForm.lastname.$touched">
+                    Last Name must be at least 2 characters long
+                </span>
+            </div>
+            <br>
+
+            <div class="row">
+                <input type="email" name="email" placeholder="Email" class="form-control col-lg-6" ng-model="signupCtrl.user.email" required>
+                <span ng-if="signupForm.email.$invalid && signupForm.email.$touched">
+                    Must be a valid email address: handle@domain format
+                </span>
+            </div>
+            <br>
+
+            <div class="row">
+                <input type="text" name="phone" placeholder="Phone ###-###-####" class="form-control col-lg-6" ng-model="signupCtrl.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})">
+                <span ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">
+                    Phone must be in the format ###-###-####.
+                </span>
+            </div>
+            <br>
+
+            <div class="row">
+                <input type="text" name="dishNum" placeholder="Favorite Dish" class="form-control col-xs-4" ng-model="signupCtrl.user.dishNum" required>
+                <span ng-if="signupForm.$valid && signupCtrl.error">
+                    No such menu number exists.
+                </span>
+            </div>
+            <br>
+
+            <div class="row">
+                <button class="btn btn-default col-xs-offset-3 col-xs-6" ng-disabled="signupForm.$invalid" ng-click="signupCtrl.submit()">Submit</button>
+            </div>
+
+            <div ng-if="signupCtrl.completed">
+                Your information has been saved {{signupCtrl.user.firstname}}!
+            </div>
+        </form>
+    </fieldset>
+</div>
